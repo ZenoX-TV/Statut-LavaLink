@@ -9,7 +9,7 @@
       "port": 80,
       "retryDelay": 3000,
       "identifier": "LavaLink",
-      "secure": true or false
+      "secure": true
     }
 
   ]
