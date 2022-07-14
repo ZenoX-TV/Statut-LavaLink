@@ -1,0 +1,16 @@
+{
+
+  "token": "ODk0MjY2OTcwMjgxNzYyODM2.GFZM0h.FcVIH52ZmxPx9xZrsXtXuN_R-a_xO9adawh3pM",
+	"channel": "996852349022769203",
+  "nodes": [
+  {
+      "host": "54.37.6.86",
+      "password": "Blacky#9125",
+      "port": 80,
+      "retryDelay": 3000,
+      "identifier": "LavaLink de Groovers",
+      "secure": false
+    }
+
+  ]
+}
