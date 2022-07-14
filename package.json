@@ -1,14 +1,14 @@
 {
   "name": "lavalink-status",
   "version": "1.0.0",
-  "description": "lavalink live status in your discord server",
+  "description": "Statut lavalink sur votre serveur discord",
   "main": "index.js",
    "scripts": {
     "start": "node index.js"
  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brblacky/lavalink-status.git"
+    "url": "git+https://github.com/zenox-yt/lavalink-status.git"
   },
   "keywords": [
     "lavalink",
@@ -20,8 +20,8 @@
   ],
   "author": "blacky",
   "license ": "MIT",
-  "bugs": "https://github.com/brblacky/lavalink-status/issues",
-  "homepage": "https://github.com/brblacky/lavalink-status#readme",
+  "bugs": "https://github.com/zenox-yt/lavalink-status/issues",
+  "homepage": "https://github.com/zenox-yt/lavalink-status#readme",
   "dependencies": {
     "discord.js": "^12.5.3",
     "erela.js": "^2.3.3",
