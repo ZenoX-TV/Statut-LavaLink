@@ -1,15 +1,15 @@
 {
 
   "token": "votre token",
-	"channel": "996852349022769203",
+	"channel": "id de votre salon",
   "nodes": [
   {
-      "host": "54.37.6.86",
-      "password": "Blacky#9125",
+      "host": "host_lavalink",
+      "password": "password_lavalink",
       "port": 80,
       "retryDelay": 3000,
-      "identifier": "LavaLink de Groovers",
-      "secure": false
+      "identifier": "LavaLink",
+      "secure": true or false
     }
 
   ]
