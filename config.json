@@ -1,7 +1,7 @@
 {
 
   "token": "votre token",
-	"channel": "id de votre salon",
+	"channel": "l'id de votre salon",
   "nodes": [
   {
       "host": "host_lavalink",
