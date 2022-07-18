@@ -1,15 +1,15 @@
 {
 
-  "token": "votre token",
-	"channel": "l'id de votre salon",
+  "token": "", // token de votre bot
+	"channel": "", // id de votre salon
   "nodes": [
   {
-      "host": "host_lavalink",
-      "password": "password_lavalink",
-      "port": 80,
+      "host": "", //host de votre serveur lavalink
+      "password": "", // password de votre serveur lavalink
+      "port": , // port de votre serveur lavalink
       "retryDelay": 3000,
       "identifier": "LavaLink",
-      "secure": true
+      "secure": true // true ou false (sécurité de votre serveur)
     }
 
   ]
