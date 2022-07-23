@@ -26,7 +26,7 @@ client.on("ready", async () => {
     const channel = await client.channels.fetch(logs);
     const embed = new EmbedBuilder()
         .setColor("Red")
-        .setDescription(`Veuillez patienter une minute !\nLe statut est prêt !`)
+        .setDescription(`Veuillez patienter une minute !`)
     channel.bulkDelete(10);
     channel.send({ embeds: [embed] }).then((msg) => {
         setInterval(() => {
@@ -45,10 +45,10 @@ client.on("ready", async () => {
             });
             const rembed = new EmbedBuilder()
                 .setAuthor({ name: 'Serveur LavaLink :', iconURL: client.user.displayAvatarURL() })
-                .setURL(`https://discord.gg/ns8CTk9J3e`)
+                .setURL(`https://discord.gg/bydqWvQfUV`)
                 .setDescription(`\`\`\`${all.join('\n\n----------------------------\n')}\n\n` +
-                    `Mémoire totale : ${Math.round(require('os').totalmem() / 1024 / 1024)} mb\n` +
-                    `Mémoire libre : ${Math.round(require('os').freemem() / 1024 / 1024)} mb\n` +
+                    `Mémoire totale : ${Math.round(require('os').totalmem() / 1024 / 1024)} MB\n` +
+                    `Mémoire libre : ${Math.round(require('os').freemem() / 1024 / 1024)} MB\n` +
                     `Modèle du CPU : ${require('os').cpus()[0].model}\n` +
                     `Cœur : ${require('os').cpus().length}\n` +
                     `Vitesse : ${require('os').cpus()[0].speed}Mhz\n` +
