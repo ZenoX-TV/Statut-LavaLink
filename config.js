@@ -1,15 +1,15 @@
 require("dotenv").config();
 
 module.exports = {
-    token: process.env.TOKEN || "",
-    logs: process.env.LOGS || "",
+    token: process.env.TOKEN || "", // Token de votre bot
+    logs: process.env.LOGS || "", // Salon du statut
     nodes: [
         {
-            host: process.env.NODE_HOST || "54.37.6.86",
-            identifier: process.env.NODE_ID || "LavaLink",
-            port: parseInt(process.env.NODE_PORT || "80"),
-            password: process.env.NODE_PASSWORD || "Blacky#9125",
-            secure: parseBoolean(process.env.NODE_SECURE || "false"),
+            host: process.env.NODE_HOST || "", // Host du serveur
+            identifier: process.env.NODE_ID || "", // Nom du serveur
+            port: parseInt(process.env.NODE_PORT || ""), // Port du serveur
+            password: process.env.NODE_PASSWORD || "", // Mot de passe du serveur
+            secure: parseBoolean(process.env.NODE_SECURE || ""), // sécurité du serveur (true ou false)
 
         }
     ],
