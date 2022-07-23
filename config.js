@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = {
     token: process.env.TOKEN || "", // Token de votre bot
-    logs: process.env.LOGS || "", // Salon du statut
+    logs: process.env.LOGS || "", // Salon pour le statut du serveur LavaLink
     nodes: [
         {
             host: process.env.NODE_HOST || "", // Host du serveur
