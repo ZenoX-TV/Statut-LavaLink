@@ -16,7 +16,7 @@ module.exports = {
 
 }
 
-function parseBoolean(value) {
+function parseBoolean(value) { // Ne rien toucher
     if (typeof (value) === 'string') {
         value = value.trim().toLowerCase();
     }
