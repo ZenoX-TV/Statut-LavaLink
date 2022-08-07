@@ -32,7 +32,7 @@ node .
     
 ## Screenshots
 
-![App Screenshot](https://media.discordapp.net/attachments/989078259151015996/1000471635268210828/Capture_decran_2022-07-23_203654.png)
+![App Screenshot](https://media.discordapp.net/attachments/989078259151015996/1005757133297561640/lavalink.png?width=435&height=473)
 
 
 ## Support
