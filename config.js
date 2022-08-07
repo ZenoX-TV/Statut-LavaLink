@@ -10,7 +10,7 @@ module.exports = {
             identifier: process.env.NODE_ID || "",
             port: parseInt(process.env.NODE_PORT || ""),
             password: process.env.NODE_PASSWORD || "",
-            secure: parseBoolean(process.env.NODE_SECURE || "false"),
+            secure: parseBoolean(process.env.NODE_SECURE || ""),
 
         }
     ],
