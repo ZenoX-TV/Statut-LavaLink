@@ -1,30 +1,18 @@
 {
-  "name": "lavalink-status",
-  "version": "2.0.0",
-  "description": "statut lavalink en direct sur votre serveur discord",
+  "name": "statut-lavalink",
+  "version": "2.1.0",
+  "description": "Statut lavalink sur votre serveur discord",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zenox-yt/lavalink-status.git"
-  },
-  "keywords": [
-    "lavalink",
-    "erela",
-    "music",
-    "bot",
-    "discord",
-    "musicbot"
-  ],
-  "author": "zenox",
-  "license ": "MIT",
-  "bugs": "https://github.com/zenox-yt/lavalink-status/issues",
-  "homepage": "https://github.com/zenox-yt/lavalink-status#readme",
   "dependencies": {
-    "discord.js": "^14.0.3",
+    "discord.js": "^14.1.2",
     "dotenv": "^16.0.1",
-    "erela.js": "^2.3.3"
+    "erela.js": "^2.3.3",
+    "moment": "^2.29.4",
+    "moment-duration-format": "^2.3.2",
+    "prettysize": "^2.0.0",
+    "systeminformation": "^5.12.1"
   }
 }
