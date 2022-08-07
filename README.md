@@ -27,7 +27,7 @@ npm install
 Pour lancer correctement ce projet, exécutez :
 
 ```bash
-node .
+node index.js
 ```
     
 ## Screenshots
