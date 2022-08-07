@@ -1,6 +1,7 @@
-const { Client, GatewayIntentBits, Partials, EmbedBuilder } = require("discord.js");
+const { Client, GatewayIntentBits, Partials } = require("discord.js");
 const { Manager } = require("erela.js");
-const { nodes, token, logs } = require("./config.js");
+const { readdirSync } = require("node:fs");
+require("dotenv").config();
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -11,56 +12,22 @@ const client = new Client({
     ],
     partials: [Partials.Channel, Partials.Message, Partials.User, Partials.GuildMember, Partials.Reaction]
 });
+client.config = require("./config.js");
 client.manager = new Manager({
-    nodes: nodes,
+    nodes: client.config.nodes,
     send: (id, payload) => {
         const guild = client.guilds.cache.get(id);
         if (guild) guild.shard.send(payload);
     },
-}).on("nodeConnect", node => console.log(`Le serveur "${node.options.identifier}" est connecté`));
-//client.rest.on('rateLimited', (info) => console.log(info));
-client.on("ready", async () => {
-    client.manager.init(client.user.id);
-    console.log(`${client.user.username} est en ligne !`);
+}).on("nodeConnect", node => console.log(`Le serveur  "${node.options.identifier}" s'est connecté`));
 
-    const channel = await client.channels.fetch(logs);
-    const embed = new EmbedBuilder()
-        .setColor("Red")
-        .setDescription(`Veuillez patienter une minute !`)
-    channel.bulkDelete(10);
-    channel.send({ embeds: [embed] }).then((msg) => {
-        setInterval(() => {
-            let all = []
-            client.manager.nodes.forEach(node => {
-                let info = []
-                info.push(`Statut : ${node.connected ? "🟢" : "🔴"}`)
-                info.push(`Serveur : ${(node.options.identifier)}`)
-                info.push(`Connexions : ${node.stats.players}`)
-                info.push(`En ligne : ${new Date(node.stats.uptime).toISOString().slice(11, 19)}`)
-                info.push("\nCPU :")
-                info.push(`Cœur : ${node.stats.cpu.cores}`)
-                info.push(`Charge du système : ${(Math.round(node.stats.cpu.systemLoad * 100) / 100).toFixed(2)}%`)
-                info.push(`Charge du serveur : ${(Math.round(node.stats.cpu.lavalinkLoad * 100) / 100).toFixed(2)}%`)
-                all.push(info.join('\n'))
-            });
-            const rembed = new EmbedBuilder()
-                .setAuthor({ name: 'Serveur LavaLink :', iconURL: client.user.displayAvatarURL() })
-                .setURL(`https://discord.gg/bydqWvQfUV`)
-                .setDescription(`\`\`\`${all.join('\n\n----------------------------\n')}\n\n` +
-                    `Mémoire totale : ${Math.round(require('os').totalmem() / 1024 / 1024)} MB\n` +
-                    `Mémoire libre : ${Math.round(require('os').freemem() / 1024 / 1024)} MB\n` +
-                    `Modèle du CPU : ${require('os').cpus()[0].model}\n` +
-                    `Cœur : ${require('os').cpus().length}\n` +
-                    `Vitesse : ${require('os').cpus()[0].speed}Mhz\n` +
-                    `Platforme : ${process.platform}\n` +
-                    `\n` + `\`\`\``)
-                .setColor("Red")
-                .setTimestamp(Date.now());
-            msg.edit({ embeds: [rembed] });
-        }, 2000);
-    })
-})
-client.login(token);
+readdirSync("./events/").forEach(file => {
+    const event = require(`./events/${file}`);
+    let eventName = file.split(".")[0];
+    console.log(`Chargement du client d'événements : ${eventName}`);
+    client.on(eventName, event.bind(null, client));
+});
+client.login(client.config.token);
 
 process.on('unhandledRejection', (reason, p) => {
     console.log(reason, p);
