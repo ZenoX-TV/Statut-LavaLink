@@ -18,7 +18,7 @@ Statut du serveur LavaLink en direct dans votre serveur Discord
 Pour installer correctement ce projet, exécutez :
 
 ```bash
-  npm install
+npm install
 ```
 
 
