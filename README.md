@@ -10,7 +10,7 @@ Statut du serveur LavaLink en direct dans votre serveur Discord
 
 ## Propriétaire :
 
-- [@zenox-yt](https://www.github.com/zenox-yt)
+- [@zenox-tv](https://www.github.com/zenox-yt)
 
 
 ## Installation :
